@@ -76,6 +76,11 @@ const changeCurrency = () => {
         currencyImg.src = "./assets/bitcoin.png"
     }
 
+    if (select.value !== '€ Euro' ||'US$ Dólar Americano'|| '₿ Bitcoin') {
+        currencyName.innerHTML = "Dólar Americano"
+        currencyImg.src = "./assets/eua.png"
+    }
+
     convertValue()
 }
 
