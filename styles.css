@@ -121,3 +121,21 @@ section {
     margin: 15px auto;
 
 }
+
+#value-currency-current {
+    padding-bottom:24px ;
+    font-size: 10px;
+    text-align: right;
+    margin-top: 1px;
+    
+}
+
+
+#currency-select {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#input-real{
+    margin-top: 5px;
+}

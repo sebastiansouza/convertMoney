@@ -24,11 +24,13 @@
                         R$ Real Brasileiro
                     </option>
                 </select>
+              
             </Label>
+
 
             <Label>
                 Converter <b>para</b>:
-                <select name="" id="">
+                <select id="currency-select">
                     <option>
                         US$ Dólar Americano
                     </option>
@@ -39,6 +41,7 @@
                         ₿ Bitcoin
                     </option>
                 </select>
+                <figure id="value-currency-current">Valor base para calcúlo: R$ 4,78</figure>
             </Label>
             <label>
                 Valor:
@@ -57,8 +60,8 @@
                 <img class="arrow-imag" src="assets/arrow.png" alt="seta-para-baixo">
 
                 <div class="currency-container">
-                    <img src="/assets/eua.png" alt="bandeira-conversão">
-                    <p class="currency-name">Dólar</p>
+                    <img src="/assets/eua.png" alt="bandeira-conversão" id="currency-img">
+                    <p class="currency-name" id="currency-name">Dólar Americano</p>
                     <p class="currency-value" id="currency-value-text">US$ 2.000,00</p>
                 </div>
             </section>
