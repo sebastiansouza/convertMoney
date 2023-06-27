@@ -96,13 +96,6 @@ const changeCurrency = () => {
 
  }
 
- const image = () => {
-    const currencyImgBr = document.getElementById('currency-img-br')
-    const currencyImg = document.getElementById('currency-img')
-
-    currencyImgBr.src = "./assets/brasil.png"
-    currencyImg.src = "./assets/eua.png"
- }
 
 button.addEventListener('click', convertValue)
 select.addEventListener('change', changeCurrency)
