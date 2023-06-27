@@ -43,7 +43,7 @@ const convertValue = () => {
     
         }
        
-    }
+    
 
     if (select.value === '₿ Bitcoin') {
         currencyValueText.innerHTML = new Intl.NumberFormat('en-US',
@@ -54,7 +54,7 @@ const convertValue = () => {
         ).format(inputReais / bitcoin)
         valueCurrent.innerText = 'Valor base para calcúlo: R$ 145.211,38'
     }
-
+}
    
 
 
@@ -78,7 +78,7 @@ const changeCurrency = () => {
     }
 
     convertValue()
-    focusCurrency()
+  
 
 }
 
