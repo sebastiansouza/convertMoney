@@ -1,5 +1,6 @@
 const button = document.getElementById('convert-button')
 const select = document.getElementById('currency-select')
+const selectBr = document.getElementById('currency-select-br')
 const valueCurrent = document.getElementById('value-currency-current')
 
 
@@ -76,13 +77,23 @@ const changeCurrency = () => {
         currencyImg.src = "./assets/bitcoin.png"
     }
 
-    if (select.value !== '€ Euro' ||'US$ Dólar Americano'|| '₿ Bitcoin') {
-        currencyName.innerHTML = "Dólar Americano"
-        currencyImg.src = "./assets/eua.png"
-    }
-
     convertValue()
 }
 
+
+ const focusCurrency = () => {
+
+    const currencyImgBr = document.getElementById('currency-img-br')
+
+
+    if (selectBr.value === 'R$ Real Brasileiro') {
+
+        currencyImgBr.src = "./assets/brasil.png"
+
+    }
+
+ }
+
 button.addEventListener('click', convertValue)
 select.addEventListener('change', changeCurrency)
+selectBr.addEventListener('focus', focusCurrency)
