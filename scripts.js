@@ -4,15 +4,20 @@ const selectBr = document.getElementById('currency-select-br')
 const valueCurrent = document.getElementById('value-currency-current')
 
 
-const dolar = 4.78
-const euro = 5.2
-const bitcoin = 145211.38
 
-const convertValue = () => {
+
+const convertValue = async () => {
     const inputReais = document.getElementById('input-real').value
     const realValueText = document.getElementById('real-value-text')
     const currencyValueText = document.getElementById('currency-value-text')
 
+
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
+
+    console.log(data)
+    const dolar = data.USDBRL.high
+    const euro = data.EURBRL.high
+    const bitcoin = data.BTCBRL.high
 
     realValueText.innerHTML = new Intl.NumberFormat('pt-BR',
         {
@@ -28,7 +33,7 @@ const convertValue = () => {
                 currency: 'USD'
             }
         ).format(inputReais / dolar)
-    valueCurrent.innerText = 'Valor base para calcúlo: R$ 4,78'
+    valueCurrent.innerText = `Valor base para calcúlo: R$ ${dolar}`
 
     }
 
@@ -39,7 +44,7 @@ const convertValue = () => {
                 currency: 'EUR'
             }
         ).format(inputReais / euro)
-        valueCurrent.innerText = 'Valor base para calcúlo: R$ 5,20'
+        valueCurrent.innerText = `Valor base para calcúlo: R$ ${euro}`
     
         }
        
@@ -52,7 +57,7 @@ const convertValue = () => {
                 currency: 'BTC'
             }
         ).format(inputReais / bitcoin)
-        valueCurrent.innerText = 'Valor base para calcúlo: R$ 145.211,38'
+        valueCurrent.innerText = `Valor base para calcúlo: R$ ${bitcoin}`
     }
 }
    
